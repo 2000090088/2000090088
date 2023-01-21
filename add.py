@@ -1,10 +1,55 @@
-# This program adds two numbers
+trigger:
 
-num1 = 1.5
-num2 = 6.3
+- master
 
-# Add two numbers
-sum = num1 + num2
 
-# Display the sum
-print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+pool:
+
+
+  vmImage: 'ubuntu-latest'
+
+
+strategy:
+
+
+  matrix:
+
+
+    Python27:
+
+
+      python.version: '2.7'
+
+
+
+steps:
+
+
+- task: UsePythonVersion@0
+
+
+  inputs:
+
+
+    versionSpec: '$(python.version)'
+
+
+  displayName: 'Use Python $(python.version)'
+
+
+- script: python "add.py"
+
+
+
+- task: PythonScript@0
+
+
+  inputs:
+
+
+    scriptSource: 'inline'
+
+
+    script: |
+      print('This is Section 1 Azure Demonstration')
+      print('KL-CSIT')
