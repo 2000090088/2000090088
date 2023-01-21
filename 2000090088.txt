@@ -1,0 +1,5 @@
+cd 
+git init
+git clone
+cd project
+cd
