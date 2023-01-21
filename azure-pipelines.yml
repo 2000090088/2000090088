@@ -52,4 +52,4 @@ pool:
 
                                 script: |
                                       print('This is Section 1 Azure Demonstration')
-                                            print('KL-CSE')
+                                            print('KL-CSIT')
